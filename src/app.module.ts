@@ -6,6 +6,7 @@ import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './modules/products/products.module';
+import { MigrationController } from './migrate.controller';
 
 @Module({
   imports: [
@@ -22,13 +23,14 @@ import { ProductsModule } from './modules/products/products.module';
         database: config.get<string>('DB_NAME'),
         autoLoadEntities: true,
         synchronize: false,
+        ssl: { rejectUnauthorized: false } //Solo para usar en postgres local
       }),
     }),
     UsersModule, 
     AuthModule, 
     ProductsModule
   ],
-  controllers: [AppController],
+  controllers: [AppController, MigrationController],
   providers: [AppService],
 })
 export class AppModule { }
