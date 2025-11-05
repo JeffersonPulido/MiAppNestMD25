@@ -14,7 +14,7 @@ import { ProductsModule } from './modules/products/products.module';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
-        type: config.get<string>('DB_TYPE'),
+        type: 'postgres',
         host: config.get<string>('DB_HOST'),
         port: config.get<number>('DB_PORT'),
         username: config.get<string>('DB_USERNAME'),
