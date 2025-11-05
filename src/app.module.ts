@@ -15,7 +15,7 @@ import { MigrationController } from './migrate.controller';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
-        type: 'postgres',
+        type: 'mysql',
         host: config.get<string>('DB_HOST'),
         port: config.get<number>('DB_PORT'),
         username: config.get<string>('DB_USERNAME'),
