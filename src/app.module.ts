@@ -23,7 +23,7 @@ import { MigrationController } from './migrate.controller';
         database: config.get<string>('DB_NAME'),
         autoLoadEntities: true,
         synchronize: false,
-        ssl: { rejectUnauthorized: false } //Solo para usar en postgres local
+        //ssl: { rejectUnauthorized: false } //Solo para usar en postgres local
       }),
     }),
     UsersModule, 

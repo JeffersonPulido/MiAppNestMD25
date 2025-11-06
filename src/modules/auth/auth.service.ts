@@ -15,7 +15,7 @@ export class AuthService {
         private jwtService: JwtService,
     ) { }
 
-    private blackList: string[] = [];
+    // private blackList: string[] = [];
 
     async register(data: CreateUserDTO) {
         const hashedPassword = await bcrypt.hash(data.password, 10);
@@ -43,12 +43,12 @@ export class AuthService {
         return { accessToken: token }
     }
 
-    async logout(token: string) {
-        this.blackList.push(token)
-        return { message: 'Sesion cerrada' }
-    }
+    // async logout(token: string) {
+    //     this.blackList.push(token)
+    //     return { message: 'Sesion cerrada' }
+    // }
 
-    isTokenBlacklistend(token: string): boolean {
-        return this.blackList.includes(token)
-    }
+    // isTokenBlacklistend(token: string): boolean {
+    //     return this.blackList.includes(token)
+    // }
 }

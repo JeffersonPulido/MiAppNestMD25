@@ -12,9 +12,9 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
         const request = context.switchToHttp().getRequest();
         const token = request.headers.authorization?.split(' ')[1]
 
-        if (this.authService.isTokenBlacklistend(token)) {
-            throw new UnauthorizedException('Token invalido - Inicie sesion nuevamente')
-        }
+        // if (this.authService.isTokenBlacklistend(token)) {
+        //     throw new UnauthorizedException('Token invalido - Inicie sesion nuevamente')
+        // }
 
         if (error || !user ) {
             throw new UnauthorizedException()
