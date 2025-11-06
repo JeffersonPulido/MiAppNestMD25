@@ -18,7 +18,7 @@ export class UsersController {
     @Get()
     @ApiOperation({ summary: 'Obtener todos los usuarios' })
     @ApiResponse({ status: 200, description: 'Lista de usuarios retornados desde BD' })
-    @Roles(RolesEnum.ADMIN)
+    // @Roles(RolesEnum.ADMIN)
     findAll() {
         return this.usersService.findAll();
     }
